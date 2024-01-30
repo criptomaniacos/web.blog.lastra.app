@@ -1,6 +1,6 @@
 {
   "facebook": {
-    "link": "https://www.facebook.com/criptomaniacosoficial",
+    "link": "https://www.facebook.com/lastraapp",
     "share": "https://www.facebook.com/sharer/sharer.php?u="
   },
   "telegram": {
@@ -8,24 +8,24 @@
     "share": "https://t.me/share/url?url="
   },
   "whatsapp": {
-    "link": "https://wa.me/",
+    "link": "https://https://api.whatsapp.com/send/?phone=48935059750&text=Ol%C3%A1%21+Gostaria+de+conversar+com+o+time+de+atendimento.&ref=ajuda.lastra.app",
     "share": "https://api.whatsapp.com/send?text="
   },
   "x": {
-    "link": "https://twitter.com/Criptomaniacos_",
+    "link": "https://twitter.com/lastra_app",
     "share": "https://twitter.com/intent/tweet?url="
   },
   "instagram": {
-    "link": "https://www.instagram.com/criptomaniacosoficial/"
+    "link": "https://www.instagram.com/lastra.app"
   },
   "youtube": {
-    "link": "https://www.youtube.com/c/CRIPTOMANIACOS/?sub_confirmation=1"
+    "link": "https://www.youtube.com/@lastra_app"
   },
   "linkedin": {
-    "link": "https://www.linkedin.com/company/criptomaniacos/mycompany/",
+    "link": "https://www.linkedin.com/company/lastra-app",
     "share": "https://www.linkedin.com/shareArticle?mini=true&url="
   },
   "tiktok": {
-    "link": "https://www.tiktok.com/@oficialcriptomaniacos"
+    "link": "https://www.tiktok.com/@lastra.app"
   }
 }
