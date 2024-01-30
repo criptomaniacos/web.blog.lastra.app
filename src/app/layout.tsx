@@ -16,7 +16,7 @@ const myFont = localFont({
   ],
 });
 
-const GTM_ID = "GTM-M2Q49KK3";
+const GTM_ID = "GTM-5JS4ZRXZ";
 
 export default function RootLayout({
   children,
