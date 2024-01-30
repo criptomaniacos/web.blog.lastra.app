@@ -36,13 +36,10 @@ export default function Home() {
                 <Link
                   href="https://use.lastra.app/signup"
                   target="_blank"
-                  className="flex justify-between items-center bg-brand-purple-500 rounded-full px-2 py-2  text-neutral-900 max-w-[180px]"
+                  className="flex justify-between items-center bg-brand-purple-500 rounded-full px-2 py-2  text-neutral-100 max-w-[180px]"
                 >
                   <span className="ml-4 mr-4">Criar Conta</span>
-                  <BsArrowUpRightCircleFill
-                    className="text-neutral-900"
-                    size={24}
-                  />
+                  <BsArrowUpRightCircleFill size={24} />
                 </Link>
               </div>
               <div className="bg-neutral-800 rounded-lg overflow-hidden border border-neutral-700 flex flex-col gap-2 mt-4">
