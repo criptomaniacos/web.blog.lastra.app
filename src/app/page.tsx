@@ -17,7 +17,7 @@ export default function Home() {
         <div className="container py-8 md:py-16">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 gap-4 flex flex-col">
-              <h2 className="border-l-8 border-orange-500 pl-4 text-2xl">
+              <h2 className="border-l-8 border-purple-500 pl-4 text-2xl">
                 Últimos Posts
               </h2>
               <BlogListHomeUltimosPosts />
@@ -26,16 +26,17 @@ export default function Home() {
             <div className="lg:w-1/4">
               <div className="bg-neutral-800 rounded-lg border border-neutral-700 p-4 flex flex-col gap-4">
                 <h3 className="text-xl ">
-                  Junte-se a mais de 500k Criptomaníacos
+                  Junte-se aos mais de 1800 clientes da Lastra
                 </h3>
                 <p className="text-neutral-400">
-                  A comunidade cripto que mais cresce no Brasil.
+                  Uma plataforma global para investir nas estratégias vencedoras
+                  do mercado de criptomoedas.
                 </p>
 
                 <Link
-                  href="https://plataforma.criptomaniacos.com.br/auth/cadastrar"
+                  href="https://use.lastra.app/signup"
                   target="_blank"
-                  className="flex justify-between items-center bg-brand-orange-500 rounded-full px-2 py-2  text-neutral-900 max-w-[180px]"
+                  className="flex justify-between items-center bg-brand-purple-500 rounded-full px-2 py-2  text-neutral-900 max-w-[180px]"
                 >
                   <span className="ml-4 mr-4">Criar Conta</span>
                   <BsArrowUpRightCircleFill

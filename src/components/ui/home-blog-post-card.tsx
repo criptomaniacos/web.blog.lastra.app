@@ -81,7 +81,7 @@ const HomeBlogPostCardSubtitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center text-brand-orange text-sm", className)}
+    className={cn("flex items-center text-brand-purple text-sm", className)}
     {...props}
   />
 ));
