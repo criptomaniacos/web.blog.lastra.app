@@ -1,0 +1,31 @@
+{
+  "facebook": {
+    "link": "https://www.facebook.com/criptomaniacosoficial",
+    "share": "https://www.facebook.com/sharer/sharer.php?u="
+  },
+  "telegram": {
+    "link": "https://t.me/criptomaniacosbr",
+    "share": "https://t.me/share/url?url="
+  },
+  "whatsapp": {
+    "link": "https://wa.me/",
+    "share": "https://api.whatsapp.com/send?text="
+  },
+  "x": {
+    "link": "https://twitter.com/Criptomaniacos_",
+    "share": "https://twitter.com/intent/tweet?url="
+  },
+  "instagram": {
+    "link": "https://www.instagram.com/criptomaniacosoficial/"
+  },
+  "youtube": {
+    "link": "https://www.youtube.com/c/CRIPTOMANIACOS/?sub_confirmation=1"
+  },
+  "linkedin": {
+    "link": "https://www.linkedin.com/company/criptomaniacos/mycompany/",
+    "share": "https://www.linkedin.com/shareArticle?mini=true&url="
+  },
+  "tiktok": {
+    "link": "https://www.tiktok.com/@oficialcriptomaniacos"
+  }
+}
