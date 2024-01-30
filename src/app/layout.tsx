@@ -1,22 +1,14 @@
-import localFont from "next/font/local";
+import { DM_Sans } from "next/font/google";
+
 import "@/styles/globals.css";
 import { Footer, Menu } from "@/components/home";
 import Script from "next/script";
 
-const myFont = localFont({
-  src: [
-    {
-      path: "./DMSans.woff2",
-      style: "normal",
-    },
-    {
-      path: "./DMSans-Italic.woff2",
-      style: "italic",
-    },
-  ],
-});
-
 const GTM_ID = "GTM-5JS4ZRXZ";
+
+const mainFont = DM_Sans({
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -24,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={myFont.className}>
+    <html lang="pt-BR" className={mainFont.className}>
       <Script id="GMT">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
