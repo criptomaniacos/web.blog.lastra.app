@@ -7,7 +7,8 @@ import { BlogListHomeMaisLidas } from "@/components/blog/blog-list-home-mais-lid
 
 export const metadata: Metadata = {
   title: "Blog da Lastra",
-  description: "Simplificando o mundo dos investimentos em cripto",
+  description:
+    "Análises de criptomoedas e conteúdos exclusivos para acelerar a sua independência financeira.",
 };
 
 export default function Home() {
