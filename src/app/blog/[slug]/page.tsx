@@ -49,8 +49,8 @@ export async function generateMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      creator: "@Criptomaniacos_",
-      site: post.canonical_url || "www.criptomaniacos.io",
+      creator: "@lastra_app",
+      site: post.canonical_url || "www.lastra.app",
       description:
         post.twitter_description || post.custom_excerpt || post.excerpt,
       title: post.title,
