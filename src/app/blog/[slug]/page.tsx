@@ -2,6 +2,7 @@ import { FollowLink } from "@/components/atoms/FollowLink";
 import { ShareLink } from "@/components/atoms/ShareLink";
 import { ghost } from "@/lib/ghost";
 import type { Metadata, ResolvingMetadata } from "next";
+import Link from "next/link";
 
 import {
   FaFacebook,
@@ -42,7 +43,7 @@ export async function generateMetadata(
           url: post.og_image || post.feature_image || "",
           width: 1200,
           height: 630,
-          alt: post.og_title || post.feature_image_alt || "",
+          alt: post.feature_image_alt || post.title,
         },
         ...previousImages,
       ],
@@ -59,7 +60,7 @@ export async function generateMetadata(
           url: post.twitter_image || post.og_image || post.feature_image || "",
           width: 1200,
           height: 630,
-          alt: post.feature_image_alt,
+          alt: post.feature_image_alt || post.title,
         },
       ],
     },
@@ -71,16 +72,17 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const post = await ghost.getPost({
     slug: params.slug,
     params: {
+      include: "tags",
       fields:
-        "id,title,slug,published_at,html,reading_time,custom_excerpt,excerpt",
+        "id,title,slug,published_at,html,reading_time,custom_excerpt,excerpt,primary_tag",
     },
   });
 
   return (
-    <div className="bg-white text-neutral-800 flex-1">
-      <div className="bg-neutral-800">
-        <div className="container  py-12 lg:py-16 flex flex-col gap-4">
-          <h1 className="text-3xl font-semibold tracking-tight text-neutral-100 sm:text-4xl">
+    <div className="bg-white flex-1">
+      <div className="bg-neutral-800 text-neutral-100">
+        <div className="container py-12 lg:py-16 flex flex-col gap-4">
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             {post.title}
           </h1>
           <p className="text-neutral-300 text-lg">
@@ -93,10 +95,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
               day: "numeric",
             })}
           </div>
+          <div className="flex gap-2 text-sm mt-4">
+            <Link href="/">Início</Link>
+            <span>/</span>
+            <Link href="/blog">Blog</Link>
+          </div>
         </div>
       </div>
       <div className="container py-16 lg:py-20">
-        <div className="flex flex-col-reverse lg:flex-row">
+        <div className="flex flex-col-reverse lg:flex-row text-neutral-900">
           <div className="lg:w-1/6 mb-8">
             <div className="text-sm text-neutral-500">Publicado em:</div>
             <div className="text-sm text-neutral-700">
@@ -110,35 +117,35 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <div className="flex flex-col gap-1 text-sm">
               <ShareLink
                 net="x"
-                text={`https://blog.criptomaniacos.io/blog/${post.slug}`}
+                text={`https://blog.lastra.app/blog/${post.slug}`}
                 Icon={FaXTwitter}
               >
                 X
               </ShareLink>
               <ShareLink
                 net="linkedin"
-                text={`https://blog.criptomaniacos.io/blog/${post.slug}`}
+                text={`https://blog.lastra.app/blog/${post.slug}`}
                 Icon={FaLinkedin}
               >
                 LinkedIn
               </ShareLink>
               <ShareLink
                 net="telegram"
-                text={`https://blog.criptomaniacos.io/blog/${post.slug}`}
+                text={`https://blog.lastra.app/blog/${post.slug}`}
                 Icon={FaTelegram}
               >
                 Telegram
               </ShareLink>
               <ShareLink
                 net="facebook"
-                text={`https://blog.criptomaniacos.io/blog/${post.slug}`}
+                text={`https://blog.lastra.app/blog/${post.slug}`}
                 Icon={FaFacebook}
               >
                 Facebook
               </ShareLink>
               <ShareLink
                 net="whatsapp"
-                text={`https://blog.criptomaniacos.io/blog/${post.slug}`}
+                text={`https://blog.lastra.app/blog/${post.slug}`}
                 Icon={FaWhatsapp}
               >
                 Whatsapp

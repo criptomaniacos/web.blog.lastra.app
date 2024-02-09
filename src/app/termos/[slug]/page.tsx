@@ -4,7 +4,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
   console.log(params.slug);
   const post = await ghost.getPage({
     slug: params.slug,
-    fields: "id,title,slug,published_at,html",
+    params: {
+      fields: "id,title,slug,published_at,html",
+    },
   });
 
   return (

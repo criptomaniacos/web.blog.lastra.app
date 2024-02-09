@@ -1,12 +1,14 @@
-import { pages } from "next/dist/build/templates/app-page";
-
-type GhostPostParamsProps = {
+export type GhostPostParamsProps = {
   filter?: string | string[];
   include?: string | string[];
   order?: string;
   formats?: string;
   page?: number;
   limit?: number;
+  fields?: string | string[];
+};
+
+export type GhostTagParamsProps = {
   fields?: string | string[];
 };
 
@@ -98,6 +100,28 @@ type GhostPostOrPageProps = {
   feature_image_caption?: string;
 };
 
+type GhostTagProps = {
+  id: string;
+  name: string;
+  slug: string;
+  description: string | null;
+  feature_image: string | null;
+  visibility: string;
+  og_image: string | null;
+  og_title: string | null;
+  og_description: string | null;
+  twitter_image: string | null;
+  twitter_title: string | null;
+  twitter_description: string | null;
+  meta_title: string | null;
+  meta_description: string | null;
+  codeinjection_head: string | null;
+  codeinjection_foot: string | null;
+  canonical_url: string | null;
+  accent_color: string | null;
+  url: string;
+};
+
 type GhostPostsProps = {
   posts: GhostPostOrPageProps[];
   meta?: {
@@ -131,13 +155,13 @@ async function getPosts(params: GhostPostParamsProps) {
   return { posts, meta };
 }
 
-type GetPostProps = {
+type GetItemByIDOrSlugProps = {
   id?: string;
   slug?: string;
   params?: GhostPostParamsProps;
 };
 
-async function getPost({ id, slug, params }: GetPostProps) {
+async function getPost({ id, slug, params }: GetItemByIDOrSlugProps) {
   const defaultParams = {
     include: ["authors", "tags"],
     ...params,
@@ -158,7 +182,7 @@ async function getPost({ id, slug, params }: GetPostProps) {
   return posts[0];
 }
 
-async function getPage({ id, slug, params }: any) {
+async function getPage({ id, slug, params }: GetItemByIDOrSlugProps) {
   const defaultParams = {
     // include: ["authors", "tags"],
     ...params,
@@ -179,9 +203,46 @@ async function getPage({ id, slug, params }: any) {
   return pages[0];
 }
 
+async function getTags(params?: GhostPostParamsProps) {
+  const defaultParams = {
+    // fields: "id,name,slug",
+    limit: 10,
+    ...params,
+  };
+  const { tags }: { tags: GhostTagProps[] } = await ghostApi({
+    path: "tags",
+    params: defaultParams,
+  });
+  return { tags };
+}
+
+async function getTag({ id, slug, params }: GetItemByIDOrSlugProps) {
+  const defaultParams = {
+    // fields: "id,name,slug",
+    limit: 1,
+    ...params,
+  };
+
+  if (id) {
+    const { tags }: { tags: GhostTagProps[] } = await ghostApi({
+      path: `tags/${id}`,
+      params: defaultParams,
+    });
+    return { tag: tags[0] };
+  }
+
+  const { tags }: { tags: GhostTagProps[] } = await ghostApi({
+    path: `tags/slug/${slug}`,
+    params: defaultParams,
+  });
+  return { tag: tags[0] };
+}
+
 export const ghost = {
   ghostApi,
   getPosts,
   getPost,
   getPage,
+  getTags,
+  getTag,
 };
