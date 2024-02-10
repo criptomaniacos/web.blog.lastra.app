@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const metadata: Metadata = {
-  title: "Blog Criptomaníacos",
+  title: "Blog Lastra",
   description: "Artigos sobre criptomoedas, blockchain e tecnologia",
 };
 
@@ -23,7 +23,7 @@ export default async function Page({
     <div className="flex-1">
       <div className="bg-neutral-950 w-full bg-[url('https://m.cmania.co/blog/header-1.jpg')] bg-no-repeat bg-cover overflow-hidden">
         <div className="container py-12">
-          <h1 className="text-5xl">Blog Criptomaníacos</h1>
+          <h1 className="text-5xl">Blog Lastra</h1>
 
           {/* breakcumbs links */}
           <div className="flex gap-2 text-sm mt-8">
