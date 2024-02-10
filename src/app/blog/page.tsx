@@ -21,7 +21,7 @@ export default async function Page({
 }) {
   return (
     <div className="flex-1">
-      <div className="bg-neutral-950 w-full bg-[url('https://m.cmania.co/blog/header-1.jpg')] bg-no-repeat bg-cover overflow-hidden">
+      <div className="bg-neutral-950 w-full bg-gradient-to-br from-black via-brand-purple-900 bg-no-repeat bg-cover overflow-hidden">
         <div className="container py-12">
           <h1 className="text-5xl">Blog Lastra</h1>
 
