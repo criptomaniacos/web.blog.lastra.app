@@ -16,8 +16,8 @@ export default function Home() {
     <main className="flex flex-col items-center justify-between flex-1">
       <div className="bg-neutral-950 w-full bg-gradient-to-br from-black via-brand-purple-900  bg-no-repeat bg-cover bg-top overflow-hidden">
         <div className="container pt-12 lg:py-20 px-4 lg:px-20 text-4xl lg:text-5xl">
-          <h1 className="hidden">Blog Criptomaníacos</h1>
-          <h2>Os melhores conteúdos sobre bitcoin, criptomoedas e liberdade</h2>
+          <h1 className="hidden">{metadata.title as string}</h1>
+          <h2>{metadata.description}</h2>
           <BlogCategoryIndexCarousel />
         </div>
       </div>
