@@ -15,7 +15,7 @@ export function Menu() {
       </Link>
       <div>
         <Link
-          href="https://use.lastra.app/signup"
+          href="https://use.lastra.app"
           target="_blank"
           className="flex justify-between items-center rounded-full border-white border-[1px] px-2 py-2  text-white"
         >
